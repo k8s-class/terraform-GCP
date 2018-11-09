@@ -11,8 +11,11 @@ gcloud init
 ```
 ### Get account credentials
 
+```
+https://console.cloud.google.com/
 
-
+Go to APIs and Services - Click on Credentials and create your account.json and put it in a folder where terraform can access it.
+```
 
 ### Get Kubernetes Credentials
 ```
