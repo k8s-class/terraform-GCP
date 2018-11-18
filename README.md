@@ -26,3 +26,9 @@ gcloud container clusters get-credentials yourclustername --zone us-west1-a --pr
 kubectl get nodes
 gcloud compute --project "yourprojectname" ssh --zone "us-west1-c" "gke-epic-default-pool-xxxxxxxxxxxxx"
 ```
+### Grant current user cluster-admin role
+```
+kubectl create clusterrolebinding cluster-admin-binding \
+    --clusterrole=cluster-admin \
+    --user=$(gcloud config get-value core/account)
+```
