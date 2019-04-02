@@ -32,3 +32,10 @@ kubectl create clusterrolebinding cluster-admin-binding \
     --clusterrole=cluster-admin \
     --user=$(gcloud config get-value core/account)
 ```
+
+### Disable stackdriver fluentd pods
+```
+CLUSTER_ZONE=$(gcloud config set compute/zone us-west1-a)
+CLUSTER="helmdemo"
+gcloud container clusters update ${CLUSTER} ${CLUSTER_ZONE} --logging-service none
+```
