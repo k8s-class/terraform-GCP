@@ -35,7 +35,7 @@ resource "google_container_cluster" "gcp_kubernetes" {
 }
 resource "google_container_node_pool" "primary_pool" {
   name       = "primary-pool"
-  cluster    = "${google_container_cluster.primary.name}"
+  cluster    = "${google_container_cluster.gcp_kubernetes.name}"
   zone       = "us-west1-a"
   node_count = "2"
 
